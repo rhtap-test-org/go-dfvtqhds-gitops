@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-dfvtqhds-gitops
+  description: This is GitOps manifest for go-dfvtqhds   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-dfvtqhds
+    backstage.io/kubernetes-id: go-dfvtqhds 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-dfvtqhds
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-dfvtqhds
